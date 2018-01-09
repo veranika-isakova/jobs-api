@@ -1,20 +1,33 @@
 const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const { applications } = require('./routes')
 const { Application } = require('./models')
-
-const PORT = process.env.PORT || 3030
+const port = process.env.PORT || 3030
 
 let app = express()
 
-app.get('/applications', (req, res, next) => {
-  Application.find()
-      // Newest recipes first
-      .sort({ createdAt: -1 })
-      // Send the data in JSON format
-      .then((applications) => res.json(applications))
-      // Forward any errors to error handler
-      .catch((error) => next(error))
+  .use(cors())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use(bodyParser.json())
+  .use(passport.initialize())
+  // Our routes
+  .use(applications)
+  // catch 404 and forward to error handler, actuall error
+  .use((req, res, next) => {
+    const err = new Error('Not Found')
+    err.status = 404
+    next(err)
   })
-
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`)
-})
+  // final error handler
+  .use((err, req, res, next) => {
+    res.status(err.status || 500)
+    res.send({ //send an object
+      //only print full errors in development
+      message: err.message,
+      error: err
+    })
+  })
+  .listen(port, () => {
+    console.log(`Server is listening on port ${port}`)
+  })
