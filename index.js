@@ -10,7 +10,7 @@ let app = express()
   .use(cors())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
-  .use(passport.initialize())
+
   // Our routes
   .use(applications)
   // catch 404 and forward to error handler, actuall error

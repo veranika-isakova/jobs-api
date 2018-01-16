@@ -1,4 +1,4 @@
-const Application = require('./application')
+const Application = require('./Application')
 
 module.exports = {
   Application

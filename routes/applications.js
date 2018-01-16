@@ -28,5 +28,16 @@ router.get('/applications', (req, res, next) => {
       .then((result) => res.json(result))
       .catch((error) => next(error))
   })
+  .patch('/applications/:id', (req, res, next) => {
+    Application.update({_id: req.params.id}, {...req.body})
+    .then((application) => res.json(application))
+    .catch((error) => next(error))
+  })
+  .delete('/applications/:id', (req, res, next) => {
+    const id = req.params.id
+    Application.remove({_id: req.params.id})
+    .then((application) => res.json(application))
+    .catch((error) => next(error))
+  })
 
 module.exports = router
