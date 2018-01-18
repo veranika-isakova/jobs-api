@@ -36,7 +36,7 @@ router.get('/applications', (req, res, next) => {
   .delete('/applications/:id', (req, res, next) => {
     const id = req.params.id
     Application.remove({_id: req.params.id})
-    .then((application) => res.json(application))
+    .then((result) => res.json(result))
     .catch((error) => next(error))
   })
 
