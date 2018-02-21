@@ -12,9 +12,6 @@ install:
   - ps: Install-Product node $env:node_version
   - yarn install --frozen-lockfile
 
-build_script:
-  - yarn build
-
 cache:
  - node_modules
  - "%LOCALAPPDATA%/Yarn"
