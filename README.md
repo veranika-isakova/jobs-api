@@ -1,8 +1,19 @@
-# Applications
 [![Build status](https://ci.appveyor.com/api/projects/status/rw5ekundgubm1obl?svg=true)](https://ci.appveyor.com/project/veranika-isakova/jobs-api)
-This small app allows user to keep track of all the applications he/she has submitted. 
+# Applications
+This small app allows to keep track of all the applications user has submitted. 
+
 I used node.js and material-ui table.
-[![](https://github.com/veranika-isakova/jobs-api/images/screenshot.png?raw=true)](https://github.com/veranika-isakova/jobs-api/images/screenshot.png?raw=true)
+[![](https://github.com/veranika-isakova/jobs-api/blob/master/images/screenshot.png?raw=true)](https://github.com/veranika-isakova/jobs-api/blob/master/images/screenshot.png?raw=true)
+
+## Steps
+
+These are the steps I followed when working on this app:
+
+1. Setting up project
+2. Adding Mongoose 
+3. Defining a Mongoose Schema
+4. Adding Routes
+5. Improving Routes and Schema
 
 ## Running Locally
 ```bash
