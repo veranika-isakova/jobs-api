@@ -13,7 +13,7 @@ These are the steps I followed when working on this app:
 2. Adding Mongoose 
 3. Defining a Mongoose Schema
 4. Adding Routes
-5. Improving Routes and Schema
+5. Refactoring
 
 ## Running Locally
 ```bash
