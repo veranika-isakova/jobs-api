@@ -20,5 +20,5 @@ These are the steps I followed when working on this app:
 git clone git@github.com:veranika-isakova/jobs-api.git
 cd jobs-api
 yarn install
-yarn run
+yarn start
 ```
