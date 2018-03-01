@@ -22,3 +22,4 @@ cd jobs-api
 yarn install
 yarn start
 ```
+Make sure that you have at least v.8 version of Node.js installed on your computer and MongoDB is available.
